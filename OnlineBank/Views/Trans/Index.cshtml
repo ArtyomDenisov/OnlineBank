@@ -1,0 +1,24 @@
+﻿
+
+@{
+    ViewData["Title"] = "Перевод";
+}
+
+<div class="profile-container">
+        <i class="fi fi-rs-calculator-money"></i>
+        <h1>Перевод по номеру телефона</h1>
+</div>
+
+<form class="trans-block" method="post" asp-controller="Trans" asp-action="Check">
+
+    <label>Откуда перевести</label>
+    <input placeholder="Номер карты"/>
+
+    <label>Кому перевести</label>
+    <input placeholder="Номер телефона"/>
+
+    <label>Сумма платежа</label>
+    <input placeholder="Сумма, Р"/>
+
+    <input type="submit" value="Перевести" />
+</form>

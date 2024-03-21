@@ -1,0 +1,102 @@
+﻿@model User
+
+@{
+    ViewData["Title"] = "Главная страница";
+}
+
+@if(TempData["AlertMessage"] != null)
+{
+    <script type="text/javascript">
+
+            window.onload = function () {
+                
+                alert('Регистрация прошла успешно!');
+            };
+        </script>
+}
+
+
+
+@if(string.IsNullOrEmpty(Model.UserName) is false)
+{
+    <div class="block-profile">
+        <div class="profile-container">
+            <i class="fi fi-rs-user"></i>
+            <h1>Профиль</h1>
+        </div>
+
+        <form method="post" asp-controller="Login" asp-action="Logout">
+        <input type="submit" value="Выйти из аккаунта" />
+        </form>
+
+        <label asp-for="UserLogin"></label>
+        <input asp-for="UserLogin" readonly/>
+        <span asp-validation-for="UserLogin"></span>
+
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" readonly/>
+        <span asp-validation-for="UserName"></span>
+
+        <label asp-for="UserSurname"></label>
+        <input asp-for="UserSurname" readonly/>
+        <span asp-validation-for="UserSurname"></span>
+
+        <label asp-for="UserPatronymic"></label>
+        <input asp-for="UserPatronymic" readonly/>
+        <span asp-validation-for="UserPatronymic"></span>
+
+        <label asp-for="UserPhone"></label>
+        <input type="tel" asp-for="UserPhone" readonly/>
+        <span asp-validation-for="UserPhone"></span>
+
+    </div>
+
+    <br />
+
+    <div class="profile-container">
+        <i class="fi fi-rs-credit-card"></i>
+        <h1>Карты</h1>
+    </div>
+
+    <form method="post" asp-controller="Home" asp-action="Cards">
+        <input type="submit" value="Посмотреть карты" />
+    </form>
+
+    <!-- <div class="container"> 
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>
+    <br />
+
+    <div class="profile-container">
+        <i class="fi fi-rs-briefcase"></i>
+        <h1>Вклады</h1>
+    </div>
+
+    <form method="post">
+        <input type="submit" value="Создать новый вклад" />
+    </form>
+
+    <div class="container"> 
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+    </div>-->
+}
+else
+{
+    <div class="block-home"> 
+        <h2>Вход в ХАБАРБАНК</h2>
+
+        <form method="post" asp-controller="Home" asp-action="Login">
+            <input type="submit" value="Войти" />  
+        </form>
+
+        <form method="post" asp-controller="Home" asp-action="Registration">
+            <input type="submit" value="Стать клиентом" />  
+        </form>
+    </div>
+}
+
+

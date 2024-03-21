@@ -1,0 +1,44 @@
+﻿@model User
+
+@{
+    ViewData["Title"] = "Регистрация";
+}
+
+
+<form class="registration-block" method="post" asp-controller="Registration" asp-action="Check">
+    <h1>Регистрация</h1>
+
+    <label asp-for="UserPhone"></label>
+    <input placeholder="Номер телефона" type="tel" asp-for="UserPhone" />
+    <span asp-validation-for="UserPhone"></span>
+
+    <label asp-for="UserLogin"></label>
+    <input placeholder="Логин" asp-for="UserLogin" />
+    <span asp-validation-for="UserLogin"></span>
+
+    <label asp-for="UserPassword"></label>
+    <input type="password" placeholder="Пароль" asp-for="UserPassword" />
+    <span asp-validation-for="UserPassword"></span>
+
+    <label asp-for="UserName"></label>
+    <input placeholder="Имя" asp-for="UserName" />
+    <span asp-validation-for="UserName"></span>
+
+    <label asp-for="UserSurname"></label>
+    <input placeholder="Фамилия" asp-for="UserSurname" />
+    <span asp-validation-for="UserSurname"></span>
+
+    <label asp-for="UserPatronymic"></label>
+    <input placeholder="Отчество" asp-for="UserPatronymic" />
+    <span asp-validation-for="UserPatronymic"></span>
+
+    <!--<label asp-for="Age"></label>
+    <input asp-for="Age" />
+    <span asp-validation-for="Age"></span>
+
+    <label asp-for="Email"></label>
+    <input asp-for="Email" />
+    <span asp-validation-for="Email"></span>-->
+
+    <input type="submit" value="Регистрация" />
+</form>

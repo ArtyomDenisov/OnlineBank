@@ -1,0 +1,30 @@
+﻿@model List<Card>
+
+@{
+    ViewData["Title"] = "Карты";
+}
+
+<div class="profile-container">
+        <i class="fi fi-rs-credit-card"></i>
+        <h1>Карты</h1>
+</div>
+
+<div>
+    <div class="item">
+        <div class="card_title">ХАБАРБАНК</div>
+        <div class="card_number">0000 0000 0000 0000</div>
+        <div class="card_date">00/00</div>
+        <div class="card_name">@ViewBag.Name @ViewBag.Surname</div>
+    </div>
+</div>
+    @foreach (var card in @Model)
+{
+    <label> Баланс: @card.RublesCount P.</label>
+    <label> Номер карты: @card.SubstanceId</label>
+    <label> Тип карты: @card.CardVariantId</label>
+    <label> ID аккаунта @card.AccountId</label>
+}
+
+<form method="post" asp-controller="Card" asp-action="AddCard">
+        <input type="submit" value="Заказать новую карту" />
+</form>

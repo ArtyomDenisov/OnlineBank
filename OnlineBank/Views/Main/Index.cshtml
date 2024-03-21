@@ -1,0 +1,38 @@
+﻿@model IEnumerable<OnlineBank.Models.User>
+
+@{
+    ViewData["Title"] = "Главная страница";
+}
+
+<h1>Здраствуйте, 
+
+    @foreach (var item in Model)
+{
+    @item.UserName @item.UserSurname
+}
+</h1>
+
+<h2>Карты</h2>
+
+<form method="post">
+    <input type="submit" value="Заказать новую карту" />
+</form>
+
+<div class="container"> 
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+</div>
+
+<h2>Вклады</h2>
+
+<form method="post">
+    <input type="submit" value="Создать новый вклад" />
+</form>
+
+<div class="container"> 
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+</div>
+

@@ -1,0 +1,30 @@
+﻿@model Card
+
+@{
+    ViewData["Title"] = "Новая карта";
+}
+
+<form class="newcard-block" method="post" asp-controller="Card" asp-action="Check">
+    <h1>Войти</h1>
+  
+        <input type="radio"id="debit" name="cardType" value="0" checked /> Дебетовая
+        <input type="radio"id="credit" name="cardType" value="1" /> Кредитная
+
+
+    <label>Имя</label>
+    <input placeholder="Имя"/>
+
+    <label>Фамилия</label>
+    <input placeholder="Фамилия"/>
+
+    <label>Отчество</label>
+    <input placeholder="Отчество"/>
+
+    <label>Телефон</label>
+    <input placeholder="Номер телефона"/>
+
+    <input type="submit" value="Оформить" />
+</form>
+
+
+

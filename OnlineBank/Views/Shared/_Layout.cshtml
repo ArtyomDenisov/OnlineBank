@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+</head>
+<body>
+    <div class = "wrapper">
+        <header>
+            <span class="logo">ХАБАРБАНК</span>
+            <nav>
+                <a href="/">Профиль</a>
+                <a href="/card">Карты</a>
+                <a href="/trans">Перевод</a>
+                <a href="/history">Операции</a>
+            </nav>
+        </header>
+        <main>
+            @RenderBody()
+        </main>
+        <footer>Онлайн-Банк "ХабарБанк", 2024г. Сухих Максим, Денисов Артем, Приезжих Тимофей.</footer>
+    </div>
+</body>
+</html>

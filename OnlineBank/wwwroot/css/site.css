@@ -1,0 +1,213 @@
+
+
+html, body {
+    height: 100%;
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+
+hr{
+    color: black;
+}
+.wrapper{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 80%;
+    padding: 20px 10%;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1f6cd4;
+}
+
+header .logo{
+    font-weight: 600;
+    font-size: 32px;
+    color: #fff;
+}
+
+header nav a{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+header nav a:hover {text-decoration: underline}
+
+main {
+    padding: 15px 10%;
+    margin: 50px 0;
+    flex:1 1 auto;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    padding: 25px 0;
+    color: #fff;
+    background: #1f6cd4;
+}
+
+main label{
+    width: 100%;
+    margin-top: 10px;
+    display: block;
+}
+
+main input:not([type="submit"],[type="radio"]) {
+    width: 60%;
+    padding: 10px 14px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid silver;
+    outline: none;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+main input:not([type="submit"]):focus{
+    border: 1px solid #1f6cd4;
+}
+
+main input[type="radio"] {
+    margin: 0.4rem;
+}
+
+main input[type="submit"] {
+    width: 40%;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 0;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    background: #1f6cd4;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+main input[type="submit"]:hover{
+    background: #458ae8;
+}
+
+main form span {
+    color: #ff0000;
+    font-weight: bold;
+    display: block;
+    margin: 1px 0;
+}
+
+.container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.item {
+    background-color:deepskyblue;
+    margin: 10px;
+    padding: 40px;
+    font-size: 25px;
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 200px;
+    width: 400px;
+}
+
+.card_title {
+    font-weight: bold;
+    font-size: 36px;
+    border-radius: 5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    height: 50px;
+    width: 200px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card_number {
+    text-align: center;
+    position: relative;
+    top: 50px;
+}
+
+.card_date {
+    text-align: center;
+    position: relative;
+    top: 70px;
+}
+
+.card_name {
+    position: relative;
+    top: 80px;
+}
+
+
+.block-home {
+    border: 1px solid black;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 340px;
+    padding-block-end: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)
+}
+
+.btn {
+    width: 40%;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 5px;
+    border: 0;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    background: #1f6cd4;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #458ae8;
+}
+
+i {
+    font-size: 58px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+.profile-container {
+    display: flex;
+    width: 100%;
+}
+
+.login-block, .registration-block, .newcard-block {
+    border: 1px solid black;
+    display: block;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-block-end: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 543px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)
+}
+
+
+
+
+

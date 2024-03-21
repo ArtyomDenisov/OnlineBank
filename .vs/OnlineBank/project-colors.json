@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "b221d4f1-c513-48e8-bc37-4dde35cf7339": {
+      "ProjectGuid": "b221d4f1-c513-48e8-bc37-4dde35cf7339",
+      "DisplayName": "OnlineBank",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

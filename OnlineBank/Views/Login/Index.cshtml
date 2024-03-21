@@ -1,0 +1,34 @@
+﻿@model User
+
+@{
+    ViewData["Title"] = "Войти";
+}
+
+
+
+
+
+<form class="login-block" method="post" asp-controller="Login" asp-action="Check">
+    <h1>Войти</h1>
+
+    @if(TempData["AlertMessage"] != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                
+                alert('Неверный логин или пароль! Пожалуста, повторите вход снова!');
+            };
+        </script>
+    }
+
+    <label asp-for="UserLogin"></label>
+    <input placeholder="Логин" asp-for="UserLogin" />
+    <span asp-validation-for="UserLogin"></span>
+
+    <label asp-for="UserPassword"></label>
+    <input placeholder="Пароль" type="password" asp-for="UserPassword" />
+    <span asp-validation-for="UserPassword"></span>
+
+    <input type="submit" value="Вход" />
+</form>
