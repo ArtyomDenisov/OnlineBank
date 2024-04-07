@@ -8,6 +8,17 @@
 <form class="registration-block" method="post" asp-controller="Registration" asp-action="Check">
     <h1>Регистрация</h1>
 
+    @if(TempData["AlertMessage"] != null)
+    {
+        <script type="text/javascript">
+
+            window.onload = function () {
+                
+                alert('Некоректные данные! Пожалуста, повторите ввод данных!');
+            };
+        </script>
+    }
+
     <label asp-for="UserPhone"></label>
     <input placeholder="Номер телефона" type="tel" asp-for="UserPhone" />
     <span asp-validation-for="UserPhone"></span>
@@ -17,7 +28,7 @@
     <span asp-validation-for="UserLogin"></span>
 
     <label asp-for="UserPassword"></label>
-    <input type="password" placeholder="Пароль" asp-for="UserPassword" />
+    <input placeholder="Пароль" type="password" asp-for="UserPassword" />
     <span asp-validation-for="UserPassword"></span>
 
     <label asp-for="UserName"></label>
@@ -31,14 +42,6 @@
     <label asp-for="UserPatronymic"></label>
     <input placeholder="Отчество" asp-for="UserPatronymic" />
     <span asp-validation-for="UserPatronymic"></span>
-
-    <!--<label asp-for="Age"></label>
-    <input asp-for="Age" />
-    <span asp-validation-for="Age"></span>
-
-    <label asp-for="Email"></label>
-    <input asp-for="Email" />
-    <span asp-validation-for="Email"></span>-->
 
     <input type="submit" value="Регистрация" />
 </form>

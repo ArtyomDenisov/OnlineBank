@@ -8,20 +8,21 @@ namespace OnlineBank.Models
 {
     public class Card
     {
-        [JsonPropertyName("substanceId")]
-        [Display(Name = "SubstanceId")]
+        [JsonPropertyName("cardId")]
+        [Display(Name = "cardId")]
         public int SubstanceId { get; set; }
 
         [JsonPropertyName("cardVariantId")]
         [Display(Name = "cardVariantId")]
         public int CardVariantId { get; set; }
 
-        [JsonPropertyName("accountId")]
-        [Display(Name = "accountId")]
+        [JsonPropertyName("userId")]
+        [Display(Name = "userId")]
         public int AccountId { get; set; }
 
-        [Display(Name = "Баланс")]
+        
         [JsonPropertyName("rublesCount")]
+        [Display(Name = "Баланс")]
         public int RublesCount { get; set; }
 
         [JsonPropertyName("imagePath")]

@@ -4,7 +4,7 @@
     ViewData["Title"] = "Главная страница";
 }
 
-@if(TempData["AlertMessage"] != null)
+@if(TempData["AlertMessage"] != null) 
 {
     <script type="text/javascript">
 
@@ -15,87 +15,138 @@
         </script>
 }
 
+@if(TempData["AlertMessageCard"] != null)
+{
+    <script type="text/javascript">
 
+            window.onload = function () {
+                
+                alert('Заказ карты прошла успешно!');
+            };
+        </script>
+}
 
 @if(string.IsNullOrEmpty(Model.UserName) is false)
 {
-    <div class="block-profile">
-        <div class="profile-container">
-            <i class="fi fi-rs-user"></i>
-            <h1>Профиль</h1>
+    <div class="home">
+
+        <div class="block-profile">
+            <div class="title-container">
+                <i class="fi fi-rs-user"></i>
+                <h1>Профиль</h1>
+            </div>
+
+            <form method="post" asp-controller="Login" asp-action="Logout">
+            <input type="submit" value="Выйти из аккаунта" />
+            </form>
+
+            <label>Логин</label>
+            <input value="@ViewBag.Login" readonly/>
+
+            <label>Имя</label>
+            <input value="@ViewBag.Name" readonly/>
+
+            <label>Фамилия</label>
+            <input value="@ViewBag.Surname" readonly/>
+
+            <label>Отчество</label>
+            <input value="@ViewBag.Patronymic" readonly/>
+
+            <label>Телефон</label>
+            <input type="tel" value="@ViewBag.Phone" readonly/>
+
         </div>
 
-        <form method="post" asp-controller="Login" asp-action="Logout">
-        <input type="submit" value="Выйти из аккаунта" />
-        </form>
+        <div class="profile-container">
 
-        <label asp-for="UserLogin"></label>
-        <input asp-for="UserLogin" readonly/>
-        <span asp-validation-for="UserLogin"></span>
+            <div class="title-container">
+                <i class="fi fi-rs-credit-card"></i>
+                <h1>Карты</h1>
+            </div>
 
-        <label asp-for="UserName"></label>
-        <input asp-for="UserName" readonly/>
-        <span asp-validation-for="UserName"></span>
+            <form method="post" asp-controller="Card" asp-action="NewCard">
+                <input type="submit" value="Заказать новую карту" />
+            </form>
 
-        <label asp-for="UserSurname"></label>
-        <input asp-for="UserSurname" readonly/>
-        <span asp-validation-for="UserSurname"></span>
+            <div class="card-row">
+            
 
-        <label asp-for="UserPatronymic"></label>
-        <input asp-for="UserPatronymic" readonly/>
-        <span asp-validation-for="UserPatronymic"></span>
+                @foreach (var card in @Model.cardList)
+                {
+                    <div class="card-column">
+                        <div class="card">
+                            <img src="~/CardDesign1empty.png" alt="CardDesign1empty" style="width:100%">
+                            <div class="card-container">
+                                <h2>Баланс: @card.RublesCount P.</h2>
+                                <p class="card-type">
+                                    @if (@card.CardVariantId == 1)
+                                    {
+                                        <label> Тип карты: Дебютовая</label>
+                                    }
+                                    else
+                                    {
+                                        <label> Тип карты: Кредитная</label>
+                                    }
+                                </p>
+                                <p>Номер карты: @card.SubstanceId</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                }
 
-        <label asp-for="UserPhone"></label>
-        <input type="tel" asp-for="UserPhone" readonly/>
-        <span asp-validation-for="UserPhone"></span>
+            </div>
+        </div>
 
+
+        
     </div>
 
-    <br />
-
-    <div class="profile-container">
-        <i class="fi fi-rs-credit-card"></i>
-        <h1>Карты</h1>
-    </div>
-
-    <form method="post" asp-controller="Home" asp-action="Cards">
-        <input type="submit" value="Посмотреть карты" />
-    </form>
-
-    <!-- <div class="container"> 
-        <div class="item">1</div>
-        <div class="item">2</div>
-        <div class="item">3</div>
-    </div>
-    <br />
-
-    <div class="profile-container">
-        <i class="fi fi-rs-briefcase"></i>
-        <h1>Вклады</h1>
-    </div>
-
-    <form method="post">
-        <input type="submit" value="Создать новый вклад" />
-    </form>
-
-    <div class="container"> 
-        <div class="item">1</div>
-        <div class="item">2</div>
-        <div class="item">3</div>
-    </div>-->
 }
 else
 {
     <div class="block-home"> 
-        <h2>Вход в ХАБАРБАНК</h2>
+        <h1>Вход в ХАБАРБАНК</h1>
 
-        <form method="post" asp-controller="Home" asp-action="Login">
-            <input type="submit" value="Войти" />  
+        <form method="post" asp-controller="Login" asp-action="Check">
+
+            @if(TempData["AlertMessage"] != null)
+            {
+                <script type="text/javascript">
+
+                window.onload = function () {
+                
+                    alert('Неверный логин или пароль! Пожалуста, повторите вход снова!');
+                    };
+                </script>
+            }
+
+            @if(TempData["RegistrationMessage"] != null)
+            {
+                <script type="text/javascript">
+
+                window.onload = function () {
+                
+                    alert('Регистрация прошла успешно!');
+                    };
+                </script>
+            }
+
+            <label asp-for="UserLogin"></label>
+            <input placeholder="Логин" asp-for="UserLogin" />
+            <span asp-validation-for="UserLogin"></span>
+
+            <label asp-for="UserPassword"></label>
+            <input placeholder="Пароль" type="password" asp-for="UserPassword" />
+            <span asp-validation-for="UserPassword"></span>
+
+            <input type="submit" value="Вход" />
         </form>
 
         <form method="post" asp-controller="Home" asp-action="Registration">
             <input type="submit" value="Стать клиентом" />  
         </form>
+
     </div>
 }
 

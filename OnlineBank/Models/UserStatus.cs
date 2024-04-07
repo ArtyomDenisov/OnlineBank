@@ -11,10 +11,10 @@ namespace OnlineBank.Models
         [JsonPropertyName("userId")]
         public int UserId { get; set; }
 
-        [JsonPropertyName("userUserLevelId")]
+        [JsonPropertyName("accountLevelId")]
         public int UserUserLevelId { get; set; }
 
-        [JsonPropertyName("userEnabled")]
+        [JsonPropertyName("accountEnabled")]
         public bool UserEnabled { get; set; }
     }
 }

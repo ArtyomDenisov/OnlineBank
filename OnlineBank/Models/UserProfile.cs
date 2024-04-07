@@ -11,22 +11,22 @@ namespace OnlineBank.Models
         [JsonPropertyName("userId")]
         public int UserId { get; set; }
 
-        [JsonPropertyName("userPhone")]
+        [JsonPropertyName("accountPhone")]
         public string UserPhone { get; set; }
 
-        [JsonPropertyName("userLogin")]
+        [JsonPropertyName("accountLogin")]
         public string UserLogin { get; set; }
 
-        [JsonPropertyName("userPassword")]
+        [JsonPropertyName("accountPassword")]
         public string UserPassword { get; set; }
 
-        [JsonPropertyName("userName")]
+        [JsonPropertyName("accountName")]
         public string UserName { get; set; }
 
-        [JsonPropertyName("userSurname")]
+        [JsonPropertyName("accountSurname")]
         public string UserSurname { get; set; }
 
-        [JsonPropertyName("userPatronymic")]
+        [JsonPropertyName("accountPatronymic")]
         public string UserPatronymic { get; set; }
     }
 }

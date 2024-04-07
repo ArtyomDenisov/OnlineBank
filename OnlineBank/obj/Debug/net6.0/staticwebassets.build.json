@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uNVWlHIv2PHLj3k/9UaoW4M5i9QEnkU3iN9Cf8sduXQ=",
+  "Hash": "ydKmwDVI8OAiq+tlXpTKgj4Pyfa/L0cISH/HlgHCNg8=",
   "Source": "OnlineBank",
   "BasePath": "_content/OnlineBank",
   "Mode": "Default",
@@ -51,12 +51,12 @@
       "OriginalItemSpec": "C:\\Users\\Артём\\OneDrive\\Рабочий стол\\Информационные WEB-системы\\OnlineBank\\OnlineBank\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\OnlineBank.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\Артём\\OneDrive\\Рабочий стол\\Информационные WEB-системы\\OnlineBank\\OnlineBank\\wwwroot\\card_image.jpg",
+      "Identity": "C:\\Users\\Артём\\OneDrive\\Рабочий стол\\Информационные WEB-системы\\OnlineBank\\OnlineBank\\wwwroot\\CardDesign1.png",
       "SourceId": "OnlineBank",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Артём\\OneDrive\\Рабочий стол\\Информационные WEB-системы\\OnlineBank\\OnlineBank\\wwwroot\\",
       "BasePath": "_content/OnlineBank",
-      "RelativePath": "card_image.jpg",
+      "RelativePath": "CardDesign1.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -65,15 +65,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\card_image.jpg"
+      "OriginalItemSpec": "wwwroot\\CardDesign1.png"
     },
     {
-      "Identity": "C:\\Users\\Артём\\OneDrive\\Рабочий стол\\Информационные WEB-системы\\OnlineBank\\OnlineBank\\wwwroot\\card_image2.jpg",
+      "Identity": "C:\\Users\\Артём\\OneDrive\\Рабочий стол\\Информационные WEB-системы\\OnlineBank\\OnlineBank\\wwwroot\\CardDesign1empty.png",
       "SourceId": "OnlineBank",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Артём\\OneDrive\\Рабочий стол\\Информационные WEB-системы\\OnlineBank\\OnlineBank\\wwwroot\\",
       "BasePath": "_content/OnlineBank",
-      "RelativePath": "card_image2.jpg",
+      "RelativePath": "CardDesign1empty.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -82,15 +82,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\card_image2.jpg"
+      "OriginalItemSpec": "wwwroot\\CardDesign1empty.png"
     },
     {
-      "Identity": "C:\\Users\\Артём\\OneDrive\\Рабочий стол\\Информационные WEB-системы\\OnlineBank\\OnlineBank\\wwwroot\\card_image3.jpg",
+      "Identity": "C:\\Users\\Артём\\OneDrive\\Рабочий стол\\Информационные WEB-системы\\OnlineBank\\OnlineBank\\wwwroot\\CardDesign2empty.png",
       "SourceId": "OnlineBank",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Артём\\OneDrive\\Рабочий стол\\Информационные WEB-системы\\OnlineBank\\OnlineBank\\wwwroot\\",
       "BasePath": "_content/OnlineBank",
-      "RelativePath": "card_image3.jpg",
+      "RelativePath": "CardDesign2empty.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -99,15 +99,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\card_image3.jpg"
+      "OriginalItemSpec": "wwwroot\\CardDesign2empty.png"
     },
     {
-      "Identity": "C:\\Users\\Артём\\OneDrive\\Рабочий стол\\Информационные WEB-системы\\OnlineBank\\OnlineBank\\wwwroot\\card_poster.png",
+      "Identity": "C:\\Users\\Артём\\OneDrive\\Рабочий стол\\Информационные WEB-системы\\OnlineBank\\OnlineBank\\wwwroot\\CardDesign3empty.png",
       "SourceId": "OnlineBank",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Артём\\OneDrive\\Рабочий стол\\Информационные WEB-системы\\OnlineBank\\OnlineBank\\wwwroot\\",
       "BasePath": "_content/OnlineBank",
-      "RelativePath": "card_poster.png",
+      "RelativePath": "CardDesign3empty.png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -116,7 +116,24 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\card_poster.png"
+      "OriginalItemSpec": "wwwroot\\CardDesign3empty.png"
+    },
+    {
+      "Identity": "C:\\Users\\Артём\\OneDrive\\Рабочий стол\\Информационные WEB-системы\\OnlineBank\\OnlineBank\\wwwroot\\CardDesign4empty.png",
+      "SourceId": "OnlineBank",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Артём\\OneDrive\\Рабочий стол\\Информационные WEB-системы\\OnlineBank\\OnlineBank\\wwwroot\\",
+      "BasePath": "_content/OnlineBank",
+      "RelativePath": "CardDesign4empty.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\CardDesign4empty.png"
     },
     {
       "Identity": "C:\\Users\\Артём\\OneDrive\\Рабочий стол\\Информационные WEB-системы\\OnlineBank\\OnlineBank\\wwwroot\\css\\site.css",

@@ -4,14 +4,17 @@
     ViewData["Title"] = "Новая карта";
 }
 
-<form class="newcard-block" method="post" asp-controller="Card" asp-action="Check">
-    <h1>Войти</h1>
-  
-        <input type="radio"id="debit" name="cardType" value="0" checked /> Дебетовая
-        <input type="radio"id="credit" name="cardType" value="1" /> Кредитная
 
 
-    <label>Имя</label>
+<form class="newcard-block" method="post" asp-controller="Card" asp-action="AddCard">
+    <h1>Конструктор карты</h1>
+
+    <label>Тип карты</label>
+    <input asp-for="CardVariantId" type="radio" name="CardVariantId" value="1" checked /> Дебетовая
+    <input asp-for="CardVariantId" type="radio" name="CardVariantId" value="2" /> Кредитная
+
+
+    <!--<label>Имя</label>
     <input placeholder="Имя"/>
 
     <label>Фамилия</label>
@@ -21,7 +24,29 @@
     <input placeholder="Отчество"/>
 
     <label>Телефон</label>
-    <input placeholder="Номер телефона"/>
+    <input placeholder="Номер телефона"/>-->
+
+    <label>Выбирите дизайн карты</label>
+
+    <input asp-for="ImagePath" type="radio" name="ImagePath" value="CardDesign1empty.png" checked /> Дизайнерский
+    <br />
+    <img class="card-image" src="~/CardDesign1empty.png" alt="CardDesign1empty" style="width:50%">
+    <br />
+
+    <input asp-for="ImagePath" type="radio" name="ImagePath" value="CardDesign2empty.png" /> Домашний
+    <br />
+    <img class="card-image" src="~/CardDesign2empty.png" alt="CardDesign2empty" style="width:50%">
+    <br />
+
+    <input asp-for="ImagePath" type="radio" name="ImagePath" value="CardDesign3empty.png" /> Классический
+    <br />
+    <img class="card-image" src="~/CardDesign3empty.png" alt="CardDesign3empty" style="width:50%">
+    <br />
+
+    <input asp-for="ImagePath" type="radio" name="ImagePath" value="CardDesign4empty.png" /> Премиальный
+    <br />
+    <img class="card-image" src="~/CardDesign4empty.png" alt="CardDesign4empty" style="width:50%">
+    <br />
 
     <input type="submit" value="Оформить" />
 </form>

@@ -39,8 +39,38 @@ namespace OnlineBank.Controllers
 
             User? user = JsonSerializer.Deserialize<User>(jsonResponse);
 
+            ViewBag.ID = user.UserId.ToString();
+            ViewBag.Login = user.UserLogin.ToString();
+            ViewBag.Name = user.UserName.ToString();
+            ViewBag.Surname = user.UserSurname.ToString();
+            ViewBag.Patronymic = user.UserPatronymic.ToString();
+            ViewBag.Phone = user.UserPhone.ToString();
+
+            response = httpClient.GetAsync($"http://habar-bank-api3.somee.com/api/cards?user_id={userId}").Result;
+
+            _ = response.EnsureSuccessStatusCode();
+
+            jsonResponse = response.Content.ReadAsStringAsync().Result;
+
+            List<Card>? cards = JsonSerializer.Deserialize<List<Card>>(jsonResponse);
+
+            user.cardList = cards;
+
+            foreach (Card card in cards)
+            {
+                if (card != null)
+                {
+                    if (this.Request.Cookies["card-id"] is null)
+                    {
+                        this.Response.Cookies.Delete("card-id");
+                    }
+                }
+                this.Response.Cookies.Append("card-id", card.SubstanceId.ToString());
+            }
+
             return View(user);
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
@@ -61,6 +91,11 @@ namespace OnlineBank.Controllers
         public IActionResult Cards() // Карты
         {
             return Redirect("/card");
+        }
+
+        public IActionResult GetMessage()
+        {
+            return PartialView("Cards_Info");
         }
     }
 }
