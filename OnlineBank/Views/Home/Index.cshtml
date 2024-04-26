@@ -4,13 +4,24 @@
     ViewData["Title"] = "Главная страница";
 }
 
-@if(TempData["AlertMessage"] != null) 
+@if(TempData["RegistrationMessage"] != null) 
 {
     <script type="text/javascript">
 
             window.onload = function () {
                 
                 alert('Регистрация прошла успешно!');
+            };
+        </script>
+}
+
+@if(TempData["AlertMessageCardError"] != null) 
+{
+    <script type="text/javascript">
+
+            window.onload = function () {
+                
+                alert('Произошла ошибка! Пожалуста, попробуйте повторить операцию позднее!');
             };
         </script>
 }
@@ -68,6 +79,8 @@
                 <input type="submit" value="Заказать новую карту" />
             </form>
 
+            <br>
+
             <div class="card-row">
             
 
@@ -75,20 +88,36 @@
                 {
                     <div class="card-column">
                         <div class="card">
-                            <img src="~/CardDesign1empty.png" alt="CardDesign1empty" style="width:100%">
+                            @if (@card.ImagePath == "string")
+                            {
+                                <img src="~/CardDesign1.1empty.png" alt="CardDesign" style="width:100%">
+                            }
+                            else if (@card.ImagePath == "CardDesign1empty.png")
+
+                            {
+                                <img src="~/CardDesign1.1empty.png" alt="CardDesign" style="width:100%">
+                            }
+                            else if (@card.ImagePath == "CardDesign2empty.png")
+                            {
+                                <img src="~/CardDesign2.1empty.png" alt="CardDesign" style="width:100%">
+                            }
+                            else
+                            {
+                                <img src="~/@card.ImagePath" alt="CardDesign" style="width:100%">
+                            }                          
                             <div class="card-container">
-                                <h2>Баланс: @card.RublesCount P.</h2>
+                                <h2>Баланс: @card.RublesCount &#8381</h2>
                                 <p class="card-type">
                                     @if (@card.CardVariantId == 1)
                                     {
-                                        <label> Тип карты: Дебютовая</label>
+                                        <label> Дебетовая №@card.SubstanceId</label>
                                     }
                                     else
                                     {
-                                        <label> Тип карты: Кредитная</label>
+                                        <label> Кредитная №@card.SubstanceId</label>
                                     }
                                 </p>
-                                <p>Номер карты: @card.SubstanceId</p>
+                                <input value="@card.CardNumber" readonly/>
                             </div>
                         </div>
                     </div>

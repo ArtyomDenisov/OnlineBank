@@ -31,7 +31,9 @@ namespace OnlineBank.Controllers
 
             HttpClient httpClient = new();
 
-            HttpResponseMessage response = httpClient.GetAsync($"http://habar-bank-api3.somee.com/api/users/{userId}").Result;
+            httpClient.DefaultRequestHeaders.Add("token", Constants.Token);
+
+            HttpResponseMessage response = httpClient.GetAsync($"http://habar-bank-api3.somee.com/api/{Constants.Version}/users/{userId}").Result;
 
             _ = response.EnsureSuccessStatusCode();
 
@@ -46,7 +48,7 @@ namespace OnlineBank.Controllers
             ViewBag.Patronymic = user.UserPatronymic.ToString();
             ViewBag.Phone = user.UserPhone.ToString();
 
-            response = httpClient.GetAsync($"http://habar-bank-api3.somee.com/api/cards?user_id={userId}").Result;
+            response = httpClient.GetAsync($"http://habar-bank-api3.somee.com/api/{Constants.Version}/cards?user_id={userId}").Result;
 
             _ = response.EnsureSuccessStatusCode();
 
@@ -64,6 +66,8 @@ namespace OnlineBank.Controllers
                     {
                         this.Response.Cookies.Delete("card-id");
                     }
+
+                    card.CardNumber = "2202" + card.CardNumber.Substring(4);
                 }
                 this.Response.Cookies.Append("card-id", card.SubstanceId.ToString());
             }

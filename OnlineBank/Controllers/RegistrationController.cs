@@ -4,6 +4,7 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using System.Xml.Linq;
+using System.Security.Cryptography;
 
 namespace OnlineBank.Controllers
 {
@@ -31,11 +32,10 @@ namespace OnlineBank.Controllers
                     Encoding.UTF8,
                     "application/json");
 
-                    HttpResponseMessage response = _httpClient.PostAsync("http://habar-bank-api3.somee.com/api/users/", jsonContent).Result;
+                    _httpClient.DefaultRequestHeaders.Add("token", Constants.Token);
 
+                    HttpResponseMessage response = _httpClient.PostAsync($"http://habar-bank-api3.somee.com/api/{Constants.Version}/users/", jsonContent).Result;
                     string? jsonResponse = response.Content.ReadAsStringAsync().Result;
-
-
                     TempData["RegistrationMessage"] = "Регистрация прошла успешно!";
                     
                     if (this.Request.Cookies["user-id"] is null)

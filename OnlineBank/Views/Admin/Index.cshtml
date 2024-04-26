@@ -1,0 +1,23 @@
+﻿@model IEnumerable<OnlineBank.Models.CardVariant>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@foreach (var cardVariant in @Model)
+{
+    <label> Идентификатор: @cardVariant.CardVariantId</label>
+    <label> Название: @cardVariant.Name</label>
+    <label> Описание: @cardVariant.Text</label>
+    <label> Процент: @cardVariant.Percentage</label>
+    <label> Тип пользователя: @cardVariant.UserLevelId</label>
+    <label> Активно: @cardVariant.Enabled</label>
+
+    @Html.ActionLink("Delete", "Delete", new { id=cardVariant.CardVariantId })
+
+    <br /><br/>
+}
+
+<form method="post" asp-controller="Admin" asp-action="AddCardVariant">
+    <input type="submit" value="Создать новый" />
+</form>

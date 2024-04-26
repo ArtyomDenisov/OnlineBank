@@ -15,10 +15,12 @@ namespace OnlineBank.Models
         public DateTime OperationDateTime { get; set; }
 
         [JsonPropertyName("substanceId")]
-        public long SubstanceId { get; set; }
+        [Required(ErrorMessage = "Необходимо заполнить поле")]
+        [Range(1, long.MaxValue, ErrorMessage = "Некорректный идентификатор карты")]
+        public long? SubstanceId { get; set; } 
 
         [JsonPropertyName("substanceSenderId")]
-        public long SubstanceSenderId { get; set; }
+        public long? SubstanceSenderId { get; set; }
 
         [JsonPropertyName("substanceRecipientId")]
         public long SubstanceRecipientId { get; set; }
@@ -27,9 +29,23 @@ namespace OnlineBank.Models
         public long OperationTypeId { get; set; }
 
         [JsonPropertyName("rublesCount")]
-        public int RublesCount { get; set; }
+        [Required(ErrorMessage = "Необходимо заполнить поле")]
+        [Range(1, int.MaxValue, ErrorMessage = "Некорректная сумма")]
+        public int? RublesCount { get; set; }
 
         [JsonPropertyName("enabled")]
         public bool Enabled { get; set; }
+
+        public string PersonSurname; // Фамилия. И
+
+        public string AvatarLetter; // Ф
+
+        //[Required(ErrorMessage = "Необходимо заполнить поле")]
+        //[Phone(ErrorMessage = "Некорректный номер телефона")]
+        //public string Phone { get; set; }
+
+        [Required(ErrorMessage = "Необходимо заполнить поле")]
+        [RegularExpression("[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}", ErrorMessage = "Неверный формат номера номера карты")]
+        public string CardNumber { get; set; }
     }
 }

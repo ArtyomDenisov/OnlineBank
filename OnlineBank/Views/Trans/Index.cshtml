@@ -1,24 +1,97 @@
-﻿
+﻿@model Sending
 
 @{
     ViewData["Title"] = "Перевод";
 }
 
+@if(TempData["AlertMessageSending"] != null) 
+{
+    <script type="text/javascript">
+
+            window.onload = function () {
+                
+                alert('Операция прошла успешно!');
+            };
+        </script>
+}
+
+@if(TempData["AlertMessageSendingRublesCount"] != null) 
+{
+    <script type="text/javascript">
+
+            window.onload = function () {
+                
+                alert('На карте недостаточно средств!');
+            };
+        </script>
+}
+
+@if(TempData["AlertMessageSendingCardExist"] != null) 
+{
+    <script type="text/javascript">
+
+            window.onload = function () {
+                
+                alert('Неверный номер карты!');
+            };
+        </script>
+}
+
+@if(TempData["AlertMessageSendingUser"] != null) 
+{
+    <script type="text/javascript">
+
+            window.onload = function () {
+                
+                alert('Карта для перевода не найдена!');
+            };
+        </script>
+}
+
+@if(TempData["AlertMessageSendingCards"] != null) 
+{
+    <script type="text/javascript">
+
+            window.onload = function () {
+                
+                alert('У получателя нет карты для перевода средсты!');
+            };
+        </script>
+}
+
+@if(TempData["AlertMessageSendingError"] != null) 
+{
+    <script type="text/javascript">
+
+            window.onload = function () {
+                
+                alert('Произошда ошибка! Пожалуста, повторите вход данных!');
+            };
+        </script>
+}
+
 <div class="title-container">
         <i class="fi fi-rs-calculator-money"></i>
-        <h1>Перевод по номеру телефона</h1>
+        <h1>Перевод на карту</h1>
 </div>
 
 <form class="trans-block" method="post" asp-controller="Trans" asp-action="Check">
 
     <label>Откуда перевести</label>
-    <input placeholder="Номер карты"/>
+    <input placeholder="Идентификатор карты" asp-for="SubstanceId" />
+    <span asp-validation-for="SubstanceId"></span>
+
+    <!--<label>Кому перевести</label>
+    <input placeholder="Номер телефона" asp-for="Phone" />
+    <span asp-validation-for="Phone"></span>-->
 
     <label>Кому перевести</label>
-    <input placeholder="Номер телефона"/>
+    <input placeholder="Номер карты" asp-for="CardNumber" />
+    <span asp-validation-for="CardNumber"></span>
 
     <label>Сумма платежа</label>
-    <input placeholder="Сумма, Р"/>
+    <input placeholder="Сумма, Р" asp-for="RublesCount" />
+    <span asp-validation-for="RublesCount"></span>
 
     <input type="submit" value="Перевести" />
 </form>

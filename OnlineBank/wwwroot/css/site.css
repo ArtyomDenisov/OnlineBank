@@ -1,5 +1,4 @@
 
-
 html, body {
     height: 100%;
     background: #ffffff;
@@ -7,8 +6,11 @@ html, body {
     margin: 0px;
 }
 
-hr{
-    color: black;
+hr {
+    color: #1f6cd4;
+    height: 2px;
+    border: none;
+    border-top: 3px solid #1f6cd4;
 }
 
 .wrapper{
@@ -18,6 +20,16 @@ hr{
 }
 
 header {
+    width: 80%;
+    padding: 20px 10%;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1f6cd4;
+}
+
+.menu {
     width: 80%;
     padding: 20px 10%;
     color: #000;
@@ -82,15 +94,17 @@ main input[type="radio"] {
 
 main input[type="submit"] {
     width: 50%;
+    max-width: 300px;
     padding: 10px 0%;
     text-align: center;
     font-size: 15px;
-    border-radius: 5px;
+    border-radius: 6px;
     border: 0;
     margin-top: 7px;
     margin-bottom: 7px;
     background: #1f6cd4;
-    font-weight: bold;
+    border: 1px solid #333333;
+    font-weight: 500;
     color: #fff;
     cursor: pointer;
 }
@@ -256,74 +270,109 @@ i {
 }
 
 .history-block {
-    border: 1px solid black;
-    display: block;
     margin-top: 5px;
-    margin-left: auto;
-    margin-right: auto;
+
     padding-block-end: 5px;
-    border-radius: 5px;
     background-color: #fff;
     width: 800px;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
     
 }
 
 .history-column {
-    border: 1px solid black;
-    border-radius: 2px;
+    border-radius: 5px;
     display: flex;
     flex-direction: row;
+    background-color: gainsboro;
+    padding: 10px;
 }
 
 .history-image {
-    border: 1px solid black;
-    border-radius: 2px;
-    width:70px;
-    height:70px;
+    width:50px;
+    height:50px;
+    padding-right: 10px;
 }
 
-.history-info {
-    border: 1px solid black;
-    border-radius: 2px;
+.history-info { 
     width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
 }
 
 .history-info-up {
-    border: 1px solid black;
-    border-radius: 2px;
     display: flex;
     flex-direction: row;
 }
 
-.history-info-up-name {
-    border: 1px solid black;
-    border-radius: 2px;
+.history-info-up-name {;
+    margin-right: 20px;
+
 }
 
 .history-info-up-date {
-    border: 1px solid black;
-    border-radius: 2px;
 }
 
 .history-info-down {
-    border: 1px solid black;
-    border-radius: 2px;
 }
 
 .history-money {
-    border: 1px solid black;
-    border-radius: 2px;
     text-align: right;
     width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .history-money-count {
-    border: 1px solid black;
-    border-radius: 2px;
 }
 
 .history-money-name {
-    border: 1px solid black;
-    border-radius: 2px;
+}
+
+.avatar {
+    background: linear-gradient(blue, purple);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 32px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    display: table-cell;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.form_radio_btn {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.form_radio_btn input[type=radio] {
+    display: none;
+}
+
+.form_radio_btn label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 3px;
+    margin: 5px;
+    line-height: 34px;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    user-select: none;
+}
+
+
+.form_radio_btn input[type=radio]:checked + label {
+    background: #1f6cd4de;
+}
+
+.form_radio_btn label:hover {
+    color: #333333;
 }

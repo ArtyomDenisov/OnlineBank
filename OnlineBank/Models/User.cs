@@ -15,6 +15,7 @@ namespace OnlineBank.Models
         [Display(Name = "Телефон")]
         [Required(ErrorMessage = "Необходимо заполнить поле")]
         [Phone(ErrorMessage = "Некорректный номер телефона")]
+        [RegularExpression("\\+\\d{11}", ErrorMessage = "Неверный формат номера телефона")]
         public string UserPhone { get; set; }
 
         [JsonPropertyName("accountLogin")]

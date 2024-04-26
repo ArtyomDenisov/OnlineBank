@@ -8,61 +8,73 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = OnlineBank
 build_property.RootNamespace = OnlineBank
-build_property.ProjectDir = C:\Users\Артём\OneDrive\Рабочий стол\Информационные WEB-системы\OnlineBank\OnlineBank\
+build_property.ProjectDir = C:\Users\Артём\OneDrive\Рабочий стол\OnlineBank\OnlineBank\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Артём\OneDrive\Рабочий стол\Информационные WEB-системы\OnlineBank\OnlineBank
+build_property.MSBuildProjectDirectory = C:\Users\Артём\OneDrive\Рабочий стол\OnlineBank\OnlineBank
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Артём/OneDrive/Рабочий стол/Информационные WEB-системы/OnlineBank/OnlineBank/Views/Card/Index.cshtml]
+[C:/Users/Артём/OneDrive/Рабочий стол/OnlineBank/OnlineBank/Views/Admin/AddCardVariant.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkQ2FyZFZhcmlhbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Артём/OneDrive/Рабочий стол/OnlineBank/OnlineBank/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Артём/OneDrive/Рабочий стол/OnlineBank/OnlineBank/Views/Admin/RemoveCardVariant.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUmVtb3ZlQ2FyZFZhcmlhbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Артём/OneDrive/Рабочий стол/OnlineBank/OnlineBank/Views/Card/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Артём/OneDrive/Рабочий стол/Информационные WEB-системы/OnlineBank/OnlineBank/Views/Card/NewCard.cshtml]
+[C:/Users/Артём/OneDrive/Рабочий стол/OnlineBank/OnlineBank/Views/Card/NewCard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZFxOZXdDYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Артём/OneDrive/Рабочий стол/Информационные WEB-системы/OnlineBank/OnlineBank/Views/History/Index.cshtml]
+[C:/Users/Артём/OneDrive/Рабочий стол/OnlineBank/OnlineBank/Views/History/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGlzdG9yeVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Артём/OneDrive/Рабочий стол/Информационные WEB-системы/OnlineBank/OnlineBank/Views/Home/Index.cshtml]
+[C:/Users/Артём/OneDrive/Рабочий стол/OnlineBank/OnlineBank/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Артём/OneDrive/Рабочий стол/Информационные WEB-системы/OnlineBank/OnlineBank/Views/Login/Index.cshtml]
+[C:/Users/Артём/OneDrive/Рабочий стол/OnlineBank/OnlineBank/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Артём/OneDrive/Рабочий стол/Информационные WEB-системы/OnlineBank/OnlineBank/Views/Main/Index.cshtml]
+[C:/Users/Артём/OneDrive/Рабочий стол/OnlineBank/OnlineBank/Views/Main/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Артём/OneDrive/Рабочий стол/Информационные WEB-системы/OnlineBank/OnlineBank/Views/Registration/Index.cshtml]
+[C:/Users/Артём/OneDrive/Рабочий стол/OnlineBank/OnlineBank/Views/Registration/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0cmF0aW9uXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Артём/OneDrive/Рабочий стол/Информационные WEB-системы/OnlineBank/OnlineBank/Views/Shared/Error.cshtml]
+[C:/Users/Артём/OneDrive/Рабочий стол/OnlineBank/OnlineBank/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Артём/OneDrive/Рабочий стол/Информационные WEB-системы/OnlineBank/OnlineBank/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Артём/OneDrive/Рабочий стол/OnlineBank/OnlineBank/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Артём/OneDrive/Рабочий стол/Информационные WEB-системы/OnlineBank/OnlineBank/Views/Trans/Index.cshtml]
+[C:/Users/Артём/OneDrive/Рабочий стол/OnlineBank/OnlineBank/Views/Trans/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhbnNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Артём/OneDrive/Рабочий стол/Информационные WEB-системы/OnlineBank/OnlineBank/Views/_ViewImports.cshtml]
+[C:/Users/Артём/OneDrive/Рабочий стол/OnlineBank/OnlineBank/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Артём/OneDrive/Рабочий стол/Информационные WEB-системы/OnlineBank/OnlineBank/Views/_ViewStart.cshtml]
+[C:/Users/Артём/OneDrive/Рабочий стол/OnlineBank/OnlineBank/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Артём/OneDrive/Рабочий стол/Информационные WEB-системы/OnlineBank/OnlineBank/Views/Shared/_Layout.cshtml]
+[C:/Users/Артём/OneDrive/Рабочий стол/OnlineBank/OnlineBank/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-gmq9ohwgcv

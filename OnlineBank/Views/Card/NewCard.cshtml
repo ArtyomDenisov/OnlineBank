@@ -4,49 +4,82 @@
     ViewData["Title"] = "Новая карта";
 }
 
+@if(TempData["AlertMessage"] != null) 
+{
+    <script type="text/javascript">
 
+            window.onload = function () {
+                
+                alert('Заказ карты прошёл успешно!');
+            };
+        </script>
+}
 
-<form class="newcard-block" method="post" asp-controller="Card" asp-action="AddCard">
+@if(TempData["AlertMessageFileNotFound"] != null) 
+{
+    <script type="text/javascript">
+
+            window.onload = function () {
+                
+                alert('Файл не был указан!');
+            };
+        </script>
+}
+
+@if (TempData["AlertMessageNotImage"] != null)
+{
+    <script type="text/javascript">
+
+            window.onload = function () {
+                
+                alert('Неверный формат файла!');
+            };
+        </script>
+}
+
+<form class="newcard-block" method="post" asp-controller="Card" asp-action="AddCard" enctype="multipart/form-data">
     <h1>Конструктор карты</h1>
 
     <label>Тип карты</label>
-    <input asp-for="CardVariantId" type="radio" name="CardVariantId" value="1" checked /> Дебетовая
-    <input asp-for="CardVariantId" type="radio" name="CardVariantId" value="2" /> Кредитная
 
+    <div class="form_radio_btn">
+	    <input asp-for="CardVariantId"  id="radio-1" type="radio" name="CardVariantId" value="1" checked>
+	    <label for="radio-1">Дебетовая</label>
+    </div>
 
-    <!--<label>Имя</label>
-    <input placeholder="Имя"/>
-
-    <label>Фамилия</label>
-    <input placeholder="Фамилия"/>
-
-    <label>Отчество</label>
-    <input placeholder="Отчество"/>
-
-    <label>Телефон</label>
-    <input placeholder="Номер телефона"/>-->
+    <div class="form_radio_btn">
+	    <input asp-for="CardVariantId"  id="radio-2" type="radio" name="CardVariantId" value="2">
+	    <label for="radio-2">Кредитная</label>
+    </div>
+ 
 
     <label>Выбирите дизайн карты</label>
 
     <input asp-for="ImagePath" type="radio" name="ImagePath" value="CardDesign1empty.png" checked /> Дизайнерский
     <br />
-    <img class="card-image" src="~/CardDesign1empty.png" alt="CardDesign1empty" style="width:50%">
+    <img class="card-image" src="~/CardDesign1.png" alt="CardDesign1" style="width:50%">
     <br />
 
     <input asp-for="ImagePath" type="radio" name="ImagePath" value="CardDesign2empty.png" /> Домашний
     <br />
-    <img class="card-image" src="~/CardDesign2empty.png" alt="CardDesign2empty" style="width:50%">
+    <img class="card-image" src="~/CardDesign2.png" alt="CardDesign2" style="width:50%">
     <br />
 
     <input asp-for="ImagePath" type="radio" name="ImagePath" value="CardDesign3empty.png" /> Классический
     <br />
-    <img class="card-image" src="~/CardDesign3empty.png" alt="CardDesign3empty" style="width:50%">
+    <img class="card-image" src="~/CardDesign3.png" alt="CardDesign3" style="width:50%">
     <br />
 
     <input asp-for="ImagePath" type="radio" name="ImagePath" value="CardDesign4empty.png" /> Премиальный
     <br />
-    <img class="card-image" src="~/CardDesign4empty.png" alt="CardDesign4empty" style="width:50%">
+    <img class="card-image" src="~/CardDesign4.png" alt="CardDesign4" style="width:50%">
     <br />
+
+    <input asp-for="ImagePath" type="radio" name="ImagePath" value="newDesign" /> Собственный дизайн
+    <br />
+    <input asp-for="File" accept="image/*"/>
+    <br />
+
 
     <input type="submit" value="Оформить" />
 </form>

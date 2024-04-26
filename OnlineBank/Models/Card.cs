@@ -32,5 +32,11 @@ namespace OnlineBank.Models
         [JsonPropertyName("enabled")]
         [Display(Name = "enabled")]
         public bool Enabled { get; set; }
+
+        [JsonPropertyName("cardNumber")]
+        [Display(Name = "cardNumber")]
+        public string CardNumber { get; set; }
+
+        public IFormFile File { get; set; }
     }
 }

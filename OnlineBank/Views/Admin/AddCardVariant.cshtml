@@ -1,0 +1,55 @@
+﻿@model CardVariant
+
+@{
+    ViewData["Title"] = "AddCardVariant";
+}
+
+<h1>Создать новый</h1>
+
+<h4>Вариант карты</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text" class="control-label"></label>
+                <input asp-for="Text" class="form-control" />
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Percentage" class="control-label"></label>
+                <input asp-for="Percentage" class="form-control" />
+                <span asp-validation-for="Percentage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CardTypeId" class="control-label"></label>
+                <input asp-for="CardTypeId" class="form-control" />
+                <span asp-validation-for="CardTypeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserLevelId" class="control-label"></label>
+                <input asp-for="UserLevelId" class="form-control" />
+                <span asp-validation-for="UserLevelId" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label asp-for="Enabled" class="control-label"></label>
+                <input class="form-check-input" asp-for="Enabled" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Назад к списку</a>
+</div>
+
+
+
