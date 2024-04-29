@@ -13,7 +13,9 @@
 
     @foreach (var sending in @Model)
     {
-        <div class="history-column">
+        @if (sending.OperationTypeId != 1)
+        {
+            <div class="history-column">
             <div class="history-image"> 
                 <script>
                     document.getElementById("avatar").style.background = generateRandomColor();
@@ -24,20 +26,40 @@
             </div>
 
             <div class="history-info"> 
-                <div class="history-info-up"> 
+                <div class="history-info-up">
+
+                @if (@sending.OperationTypeId == 2)
+                {
                     <div class="history-info-up-name"> Карта @sending.SubstanceId</div>
-                    <div class="history-info-up-date"> @sending.OperationDateTime </div>
+                }
+                else
+                {
+                    <div class="history-info-up-name"> Карта @sending.SubstanceRecipientId</div>
+                }
+
+                <div class="history-info-up-date"> @sending.OperationDateTime </div>
                 </div>
                 <div class="history-info-down"> @sending.PersonSurname</div>
             </div>
 
-            <div class="history-money"> 
-                <div class="history-money-count"> - @sending.RublesCount P.</div>
-                <div class="history-money-name"> Перевод</div>
+            <div class="history-money">
+                @if (@sending.OperationTypeId == 2)
+                {
+                    <div class="history-money-count"> - @sending.RublesCount P.</div>
+                    <div class="history-money-name"> Перевод</div>
+                }
+                else
+                {
+                    <div class="history-money-count"> + @sending.RublesCount P.</div>
+                    <div class="history-money-name"> Пополнение</div>
+                }
             </div>
 
         </div>
+
         <hr />
+        }
+             
     }
 </div>
 

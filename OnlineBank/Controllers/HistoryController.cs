@@ -30,10 +30,16 @@ namespace OnlineBank.Controllers
                 HttpResponseMessage response = httpClient.GetAsync($"http://habar-bank-api3.somee.com/api/{Constants.Version}/users?count={int.MaxValue}").Result;
                 _ = response.EnsureSuccessStatusCode();
                 string jsonResponse = response.Content.ReadAsStringAsync().Result;
-
                 List<User>? users = JsonSerializer.Deserialize<List<User>>(jsonResponse);
 
-                List<Sending> transfers = new();
+                response = httpClient.GetAsync($"http://habar-bank-api3.somee.com/api/{Constants.Version}/cards?user_id={userId}").Result;
+                _ = response.EnsureSuccessStatusCode();
+                jsonResponse = response.Content.ReadAsStringAsync().Result;
+
+                List<Card>? userCards = JsonSerializer.Deserialize<List<Card>>(jsonResponse);
+                
+
+                //List<Sending> transfers = new();
 
                 foreach (User user in users)
                 {
@@ -60,13 +66,42 @@ namespace OnlineBank.Controllers
 
                     }
 
-                    sendings.Sort(delegate (Sending x, Sending y)
-                    {
-                        return x.OperationDateTime.CompareTo(y.OperationDateTime);
-                    });
-                    sendings.Reverse();
                 }
-                
+
+                sendings.Sort(delegate (Sending x, Sending y)
+                {
+                    return x.OperationDateTime.CompareTo(y.OperationDateTime);
+                });
+
+
+
+                sendings.Reverse();
+
+                foreach (Sending sending1 in sendings)
+                {
+                    foreach (Card userCard in userCards)
+                    {
+                        if (sending1.SubstanceSenderId == userCard.SubstanceId)
+                        {
+                            sending1.OperationTypeId = 2;
+                        }
+                        else if (sending1.SubstanceRecipientId == userCard.SubstanceId)
+                        {
+                            sending1.OperationTypeId = 3;
+                        }
+                        
+                    }
+                    Console.WriteLine(sending1.OperationDateTime + " " + sending1.SendingId + " " + sending1.SubstanceId + " " + sending1.SubstanceRecipientId + " " + sending1.SubstanceSenderId);
+                }
+
+                //foreach (Sending sending1 in sendings)
+                //{
+                    //if (sending1.OperationTypeId == 1)
+                    //{
+                        //sendings.Remove(sending1);
+                    //}
+                //}
+
                 return View(sendings);
             }
             catch (Exception ex)
