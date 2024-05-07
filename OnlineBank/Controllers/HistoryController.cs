@@ -91,7 +91,6 @@ namespace OnlineBank.Controllers
                         }
                         
                     }
-                    Console.WriteLine(sending1.OperationDateTime + " " + sending1.SendingId + " " + sending1.SubstanceId + " " + sending1.SubstanceRecipientId + " " + sending1.SubstanceSenderId);
                 }
 
                 //foreach (Sending sending1 in sendings)

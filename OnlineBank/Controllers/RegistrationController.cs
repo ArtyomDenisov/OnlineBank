@@ -21,8 +21,8 @@ namespace OnlineBank.Controllers
         public IActionResult Check(User user) // Регистрация пользователя
         {
        
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 try
                 {
                     user.UserEnabled = true;
@@ -51,7 +51,7 @@ namespace OnlineBank.Controllers
                     return View("Index");
                 }
 
-            }
+            //}
             return View("Index");
         }
     }

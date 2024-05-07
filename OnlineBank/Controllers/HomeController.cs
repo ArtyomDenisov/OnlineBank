@@ -49,7 +49,7 @@ namespace OnlineBank.Controllers
             ViewBag.Phone = user.UserPhone.ToString();
 
             
-response = httpClient.GetAsync($"http://habar-bank-api3.somee.com/api/{Constants.Version}/cards?user_id={userId}").Result;
+            response = httpClient.GetAsync($"http://habar-bank-api3.somee.com/api/{Constants.Version}/cards?user_id={userId}").Result;
             _ = response.EnsureSuccessStatusCode();
 
             jsonResponse = response.Content.ReadAsStringAsync().Result;

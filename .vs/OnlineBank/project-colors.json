@@ -10,7 +10,12 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Прочие файлы",
       "ColorIndex": -1
+    },
+    "1ea6a2a4-046c-4636-898e-2c0747a6fd44": {
+      "ProjectGuid": "1ea6a2a4-046c-4636-898e-2c0747a6fd44",
+      "DisplayName": "OnlineBankTestProject",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

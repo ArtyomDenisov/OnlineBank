@@ -40,12 +40,24 @@ namespace OnlineBank.Models
 
         public string AvatarLetter; // Ф
 
-        //[Required(ErrorMessage = "Необходимо заполнить поле")]
-        //[Phone(ErrorMessage = "Некорректный номер телефона")]
-        //public string Phone { get; set; }
-
         [Required(ErrorMessage = "Необходимо заполнить поле")]
         [RegularExpression("[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}", ErrorMessage = "Неверный формат номера номера карты")]
         public string CardNumber { get; set; }
+
+        public Sending(string AvatarLetter, bool Enabled, DateTime OperationDateTime, int OperationTypeId, string PersonSurname, int RublesCount, int SendingId, int SubstanceId, int SubstanceRecipientId, int SubstanceSenderId)
+        {
+            this.AvatarLetter = AvatarLetter;
+            this.Enabled = Enabled;
+            this.OperationDateTime = OperationDateTime;
+            this.OperationTypeId = OperationTypeId;
+            this.PersonSurname = PersonSurname;
+            this.RublesCount = RublesCount;
+            this.SendingId = SendingId;
+            this.SubstanceId = SubstanceId;
+            this.SubstanceRecipientId = SubstanceRecipientId;
+            this.SubstanceSenderId = SubstanceSenderId;
+        }
+
+        public Sending() { }
     }
 }

@@ -38,5 +38,18 @@ namespace OnlineBank.Models
         public string CardNumber { get; set; }
 
         public IFormFile File { get; set; }
+
+        public Card(int SubstanceId, int CardVariantId, int AccountId, int RublesCount, string ImagePath, bool Enabled, string CardNumber)
+        {
+            this.SubstanceId = SubstanceId;
+            this.CardVariantId = CardVariantId;
+            this.AccountId = AccountId;
+            this.RublesCount = RublesCount;
+            this.ImagePath = ImagePath;
+            this.Enabled = Enabled;
+            this.CardNumber = CardNumber;
+        }
+
+        public Card() { }
     }
 }
