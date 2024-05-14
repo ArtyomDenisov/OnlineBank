@@ -37,9 +37,6 @@ namespace OnlineBank.Controllers
                 jsonResponse = response.Content.ReadAsStringAsync().Result;
 
                 List<Card>? userCards = JsonSerializer.Deserialize<List<Card>>(jsonResponse);
-                
-
-                //List<Sending> transfers = new();
 
                 foreach (User user in users)
                 {
@@ -92,14 +89,6 @@ namespace OnlineBank.Controllers
                         
                     }
                 }
-
-                //foreach (Sending sending1 in sendings)
-                //{
-                    //if (sending1.OperationTypeId == 1)
-                    //{
-                        //sendings.Remove(sending1);
-                    //}
-                //}
 
                 return View(sendings);
             }

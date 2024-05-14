@@ -21,13 +21,11 @@ namespace OnlineBank.Controllers
                 var userId = this.Request.Cookies["user-id"];
 
                 HttpClient httpClient = new HttpClient();
-
                 httpClient.DefaultRequestHeaders.Add("token", Constants.Token);
-
                 HttpResponseMessage response = httpClient.GetAsync($"http://habar-bank-api3.somee.com/api/{Constants.Version}/users/{userId}").Result;
-
                 _ = response.EnsureSuccessStatusCode();
                 string jsonResponse = response.Content.ReadAsStringAsync().Result;
+
                 User user = JsonSerializer.Deserialize<User>(jsonResponse);
 
                 response = httpClient.GetAsync($"http://habar-bank-api3.somee.com/api/{Constants.Version}/cards?user_id={userId}").Result;

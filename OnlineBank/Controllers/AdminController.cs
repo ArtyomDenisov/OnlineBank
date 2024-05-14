@@ -11,34 +11,22 @@ namespace OnlineBank.Controllers
         public ActionResult Index()
         {
             HttpClient httpClient = new();
-
             httpClient.DefaultRequestHeaders.Add("token", Constants.Token);
-
             HttpResponseMessage response = httpClient.GetAsync($"http://habar-bank-api3.somee.com/api/1.0/card-variants").Result;
-
             _ = response.EnsureSuccessStatusCode();
-
             string jsonResponse = response.Content.ReadAsStringAsync().Result;
-
             List<CardVariant>? cardVariants = JsonSerializer.Deserialize<List<CardVariant>>(jsonResponse);
-        
             return View(cardVariants);
         }
 
         public ActionResult Details(int id)
         {
             HttpClient httpClient = new();
-
             httpClient.DefaultRequestHeaders.Add("token", Constants.Token);
-
             HttpResponseMessage response = httpClient.GetAsync($"http://habar-bank-api3.somee.com/api/1.0/card-variants/{id}").Result;
-
             _ = response.EnsureSuccessStatusCode();
-
             string jsonResponse = response.Content.ReadAsStringAsync().Result;
-
             CardVariant? cardVariant = JsonSerializer.Deserialize<CardVariant>(jsonResponse);
-
             return View(cardVariant);
         }
 
@@ -57,11 +45,8 @@ namespace OnlineBank.Controllers
                 "application/json");
 
                 HttpClient httpClient = new();
-
                 httpClient.DefaultRequestHeaders.Add("token", Constants.Token);
-
                 HttpResponseMessage response = httpClient.PostAsync($"http://habar-bank-api3.somee.com/api/1.0/card-variants/", jsonContent).Result;
-
                 return Redirect("/admin");
             }
             catch
@@ -78,11 +63,8 @@ namespace OnlineBank.Controllers
         public ActionResult Delete(int id)
         {
             HttpClient httpClient = new();
-
             httpClient.DefaultRequestHeaders.Add("token", Constants.Token);
-
             HttpResponseMessage response = httpClient.PutAsync($"http://habar-bank-api3.somee.com/api/1.0/card-variants/{id}?enabled=false", null).Result;
-
             return Redirect("/admin");
         }
     }

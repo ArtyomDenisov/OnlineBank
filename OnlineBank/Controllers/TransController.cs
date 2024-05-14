@@ -30,14 +30,13 @@ namespace OnlineBank.Controllers
                     var userId = this.Request.Cookies["user-id"];
                     bool isCardExist = false;
                     HttpClient httpClient = new HttpClient();
-
-
                     httpClient.DefaultRequestHeaders.Add("token", Constants.Token);
-
                     HttpResponseMessage response = httpClient.GetAsync($"http://habar-bank-api3.somee.com/api/{Constants.Version}/cards?user_id={userId}").Result;
                     _ = response.EnsureSuccessStatusCode();
                     string jsonResponse = response.Content.ReadAsStringAsync().Result;
+
                     List<Card> userCards = JsonSerializer.Deserialize<List<Card>>(jsonResponse);
+
                     foreach (Card userCard in userCards)
                     {
                         if (userCard.SubstanceId == sending.SubstanceId)
@@ -105,35 +104,6 @@ namespace OnlineBank.Controllers
 
                     jsonResponse = response.Content.ReadAsStringAsync().Result;
                     TempData["AlertMessageSending"] = "Операция прошла успешно!";
-
-                    //User user = users.Find(x => x.UserPhone.Contains(sending.Phone));
-                    //if (user is null)
-                    //{
-                    //TempData["AlertMessageSendingUser"] = "Пользователя с данным номером телефона не существует!";
-                    //return View("Index");
-                    //}
-
-                    //response = httpClient.GetAsync($"http://habar-bank-api3.somee.com/api/{Constants.Version}/cards?user_id={user.UserId}").Result;
-                    //_ = response.EnsureSuccessStatusCode();
-                    //jsonResponse = response.Content.ReadAsStringAsync().Result;
-                    //List<Card> cards = JsonSerializer.Deserialize<List<Card>>(jsonResponse);
-                    //if (cards.Count == 0)
-                    //{
-                        //TempData["AlertMessageSendingCards"] = "У получателя нет карты для перевода средсты!";
-                        //return View("Index");
-                    //}
-                    //Card card = cards[0];
-                    //sending.SubstanceRecipientId = card.SubstanceId;
-
-                    //using StringContent jsonContent = new(
-                    //JsonSerializer.Serialize(sending),
-                    //Encoding.UTF8,
-                    //"application/json");
-
-                    //response = httpClient.PostAsync($"http://habar-bank-api3.somee.com/api/{Constants.Version}/transfers", jsonContent).Result;
-
-                    //jsonResponse = response.Content.ReadAsStringAsync().Result;
-                    //TempData["AlertMessageSending"] = "Операция прошла успешно!";
 
                 }
                 catch (Exception ex)

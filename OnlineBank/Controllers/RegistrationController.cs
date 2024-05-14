@@ -12,17 +12,17 @@ namespace OnlineBank.Controllers
     {
         private static readonly HttpClient _httpClient = new();
 
-        public IActionResult Index() // Registration
+        public IActionResult Index() 
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Check(User user) // Регистрация пользователя
+        public IActionResult Check(User user)
         {
        
-            //if (ModelState.IsValid)
-            //{
+            if (ModelState.IsValid)
+            {
                 try
                 {
                     user.UserEnabled = true;
@@ -51,7 +51,7 @@ namespace OnlineBank.Controllers
                     return View("Index");
                 }
 
-            //}
+            }
             return View("Index");
         }
     }

@@ -76,13 +76,9 @@ namespace OnlineBank.Controllers
                     try
                     {
                         HttpClient httpClient = new HttpClient();
-
                         httpClient.DefaultRequestHeaders.Add("token", Constants.Token);
-
                         HttpResponseMessage response = httpClient.GetAsync($"http://habar-bank-api3.somee.com/api/{Constants.Version}/admins/auth?login={contact.UserLogin}&password={contact.UserPassword}").Result;
-
                         _ = response.EnsureSuccessStatusCode();
-
                         string jsonResponse = response.Content.ReadAsStringAsync().Result;
 
                         Admin? admin = JsonSerializer.Deserialize<Admin>(jsonResponse);
